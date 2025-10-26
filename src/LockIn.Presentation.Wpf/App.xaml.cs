@@ -1,7 +1,4 @@
 ﻿// src/LockIn.Presentation.Wpf/App.xaml.cs
-using System.Globalization;
-using System.Windows;
-using System.Windows.Threading;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using LockIn.Abstractions;
 using LockIn.Infrastructure.Logging;
@@ -11,13 +8,14 @@ using LockIn.Infrastructure.SingleInstance;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System.Globalization;
 using System.Runtime.InteropServices;
+using System.Windows;
 using System.Windows.Interop;
-
-using Application = System.Windows.Application;
+using System.Windows.Threading;
 
 namespace LockIn.Presentation.Wpf;
-public partial class App : Application
+public partial class App : System.Windows.Application
 {
     private IHost? _host;
     private ILogger<App>? _log;

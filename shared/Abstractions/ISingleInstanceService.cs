@@ -8,3 +8,4 @@ public interface ISingleInstanceService : IDisposable
     /// Señal a la instancia primaria para mostrar la ventana principal.
     void SignalFirstInstanceToShow();
 }
+

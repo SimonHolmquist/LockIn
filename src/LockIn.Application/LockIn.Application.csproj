@@ -7,9 +7,11 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 	<ItemGroup>
+		<ProjectReference Include="..\..\shared\Abstractions\LockIn.Abstractions.csproj" />
 		<ProjectReference Include="..\LockIn.Domain\LockIn.Domain.csproj" />
 	</ItemGroup>
 	<ItemGroup>
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
 		<PackageReference Include="MediatR" />
 		<PackageReference Include="FluentValidation" />
 		<!-- Reservado: Mapster o AutoMapper (no usar aún) -->
