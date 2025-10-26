@@ -1,0 +1,69 @@
+# ── Build/artefactos .NET
+**/bin/
+**/obj/
+**/out/
+**/publish/
+artifacts/
+
+# ── IDEs/editores
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ── ReSharper/Rider
+.ReSharper*/
+*_Resharper.*
+resharper-host/*
+
+# ── NuGet
+*.nupkg
+*.snupkg
+.nuget/packages/
+packages/
+
+# ── Resultados de tests / cobertura
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# ── Logs/diagnóstico locales
+*.log
+logs/
+
+# ── Installer/paquetería (WiX/MSIX/AppX)
+*.msi
+*.msm
+*.wixpdb
+*.wixproj.user
+*.msix
+*.msixbundle
+*.msixupload
+*.appx
+*.appxbundle
+
+# ── SQLite (p/ej. pruebas locales)
+*.db
+*.db-shm
+*.db-wal
+
+# ── Config locales (no productivas)
+appsettings.*.local.json
+*.local.settings.json
+
+# ── SO/varios
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+$tf/
+
+# ── Herramientas varias
+*.ncrunch*
+.nCrunch*
+*.dotCover

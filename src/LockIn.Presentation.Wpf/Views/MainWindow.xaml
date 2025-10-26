@@ -1,0 +1,20 @@
+﻿<Window x:Class="LockIn.Presentation.Wpf.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LockIn" Height="220" Width="420"
+        WindowState="Normal"
+        ShowActivated="True"
+        ShowInTaskbar="True"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="16">
+        <StackPanel>
+            <TextBlock Text="Verificación de cultura y formato (es-AR, 24 h)" Margin="0,0,0,8"
+                 FontSize="14" />
+            <Border Padding="12" CornerRadius="8" BorderBrush="#333" BorderThickness="1">
+                <TextBlock FontSize="28" Text="{Binding Now, StringFormat='{}{0:dddd dd/MM/yyyy HH:mm:ss}'}"/>
+            </Border>
+            <TextBlock Margin="0,12,0,0" Opacity="0.7"
+                 Text="Esta ventana se muestra/oculta desde el icono de bandeja (doble clic) o el menú 'Abrir Mi Día'."/>
+        </StackPanel>
+    </Grid>
+</Window>

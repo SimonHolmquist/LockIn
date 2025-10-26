@@ -1,0 +1,28 @@
+﻿<!-- src/LockIn.Presentation.Wpf/LockIn.Presentation.Wpf.csproj -->
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
+		<UseWPF>true</UseWPF>
+		<UseWindowsForms>true</UseWindowsForms>
+		<!-- NotifyIcon -->
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<ApplicationIcon></ApplicationIcon>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\shared\Abstractions\LockIn.Abstractions.csproj" />
+		<ProjectReference Include="..\LockIn.Infrastructure\LockIn.Infrastructure.csproj" />
+		<ProjectReference Include="..\LockIn.Application\LockIn.Application.csproj" />
+		<ProjectReference Include="..\LockIn.Domain\LockIn.Domain.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+		<PackageReference Include="Microsoft.Extensions.Logging" />
+		<PackageReference Include="Microsoft.Extensions.Options" />
+		<PackageReference Include="MediatR" />
+	</ItemGroup>
+</Project>
