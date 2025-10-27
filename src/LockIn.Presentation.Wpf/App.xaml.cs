@@ -1,6 +1,7 @@
 ﻿// src/LockIn.Presentation.Wpf/App.xaml.cs
 using CommunityToolkit.Mvvm.DependencyInjection;
 using LockIn.Abstractions;
+using LockIn.Infrastructure;
 using LockIn.Infrastructure.Logging;
 using LockIn.Infrastructure.Paths;
 using LockIn.Infrastructure.Preferences;
@@ -25,6 +26,7 @@ public partial class App : System.Windows.Application
 
     protected override void OnStartup(StartupEventArgs e)
     {
+        base.OnStartup(e);
         // Cultura es-AR + 24h
         var culture = new CultureInfo("es-AR");
         culture.DateTimeFormat.ShortTimePattern = "HH:mm";
@@ -41,6 +43,7 @@ public partial class App : System.Windows.Application
                 // Infra
                 services.AddSingleton<ILocalPrefs, LocalPrefsService>();
                 services.AddSingleton<ISingleInstanceService, SingleInstanceService>();
+                services.AddInfrastructureData();
 
                 // MediatR (preparado, sin Handlers aún)
                 services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(App).Assembly));
@@ -62,7 +65,10 @@ public partial class App : System.Windows.Application
 
         Ioc.Default.ConfigureServices(_host.Services);
 
+        var appRo = _host.Services.GetRequiredService<IAppReadOnlyState>();
+
         _log = _host.Services.GetRequiredService<ILogger<App>>();
+        _log.LogInformation("Base de datos abierta en modo {Mode}", appRo.ReadOnlyMode ? "solo-lectura" : "lectura/escritura");
         _single = _host.Services.GetRequiredService<ISingleInstanceService>();
         _tray = _host.Services.GetRequiredService<Services.TrayIconService>();
 

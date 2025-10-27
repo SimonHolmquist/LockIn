@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
-		<TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
+		<TargetFramework>net9.0-windows</TargetFramework>
 		<UseWPF>true</UseWPF>
 		<UseWindowsForms>true</UseWindowsForms>
 		<!-- NotifyIcon -->
@@ -13,9 +13,8 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\..\shared\Abstractions\LockIn.Abstractions.csproj" />
-		<ProjectReference Include="..\LockIn.Infrastructure\LockIn.Infrastructure.csproj" />
 		<ProjectReference Include="..\LockIn.Application\LockIn.Application.csproj" />
-		<ProjectReference Include="..\LockIn.Domain\LockIn.Domain.csproj" />
+		<ProjectReference Include="..\LockIn.Infrastructure\LockIn.Infrastructure.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" />

@@ -1,20 +1,17 @@
-﻿<!-- src/LockIn.Infrastructure/LockIn.Infrastructure.csproj -->
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
+		<TargetFramework>net9.0-windows</TargetFramework>
 		<Nullable>enable</Nullable>
-		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\..\shared\Abstractions\LockIn.Abstractions.csproj" />
-		<ProjectReference Include="..\LockIn.Application\LockIn.Application.csproj" />
-		<ProjectReference Include="..\LockIn.Domain\LockIn.Domain.csproj" />
-	</ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
-		<!-- Fase 2 -->
-		<PackageReference Include="Microsoft.Extensions.Logging" />
-		<PackageReference Include="Microsoft.Extensions.Options" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" PrivateAssets="all" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\shared\Abstractions\LockIn.Abstractions.csproj" />
 	</ItemGroup>
 </Project>
